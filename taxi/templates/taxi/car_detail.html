@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'taxi_car_list' %}">Car Listing</a></p>
+<table class="table">
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>slug</td><td>{{ object.slug }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>car_color</td><td>{{ object.car_color }}</td></tr>
+<tr><td>produce_year</td><td>{{ object.produce_year }}</td></tr>
+<tr><td>technical_date</td><td>{{ object.technical_date }}</td></tr>
+<tr><td>insurance_date</td><td>{{ object.insurance_date }}</td></tr>
+<tr><td>car_code</td><td>{{ object.car_code }}</td></tr>
+<tr><td>service_type</td><td>{{ object.service_type }}</td></tr>
+<tr><td>vin_number</td><td>{{ object.vin_number }}</td></tr>
+<tr><td>chasis_number</td><td>{{ object.chasis_number }}</td></tr>
+<tr><td>motor_number</td><td>{{ object.motor_number }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Car</a>
+
+{% endblock %}

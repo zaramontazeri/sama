@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'school_student_list' %}">Student Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>created</td>
+    <td>last_updated</td>
+    <td>full_name</td>
+    <td>national_code</td>
+    <td>gender</td>
+    <td>student_code</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.created }}</td>
+    <td>{{ object.last_updated }}</td>
+    <td>{{ object.full_name }}</td>
+    <td>{{ object.national_code }}</td>
+    <td>{{ object.gender }}</td>
+    <td>{{ object.student_code }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'school_student_create' %}">Create new Student</a>
+{% endblock %}

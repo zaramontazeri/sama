@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'taxi_regionradius_list' %}">RegionRadius Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>created</td>
+    <td>last_updated</td>
+    <td>point</td>
+    <td>radius</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.created }}</td>
+    <td>{{ object.last_updated }}</td>
+    <td>{{ object.point }}</td>
+    <td>{{ object.radius }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'taxi_regionradius_create' %}">Create new RegionRadius</a>
+{% endblock %}

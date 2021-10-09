@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'transportation_company_contract_list' %}">Contract Listing</a></p>
+<table class="table">
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>status</td><td>{{ object.status }}</td></tr>
+<tr><td>service_type</td><td>{{ object.service_type }}</td></tr>
+<tr><td>commission_rate_contract</td><td>{{ object.commission_rate_contract }}</td></tr>
+<tr><td>source_loc</td><td>{{ object.source_loc }}</td></tr>
+<tr><td>destination_loc</td><td>{{ object.destination_loc }}</td></tr>
+<tr><td>source_address</td><td>{{ object.source_address }}</td></tr>
+<tr><td>destination_address</td><td>{{ object.destination_address }}</td></tr>
+<tr><td>side_way</td><td>{{ object.side_way }}</td></tr>
+<tr><td>special</td><td>{{ object.special }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Contract</a>
+
+{% endblock %}

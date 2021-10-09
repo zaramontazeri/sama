@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'taxi_travel_list' %}">Travel Listing</a></p>
+<table class="table">
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>slug</td><td>{{ object.slug }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>source_address</td><td>{{ object.source_address }}</td></tr>
+<tr><td>source_point</td><td>{{ object.source_point }}</td></tr>
+<tr><td>destination_address</td><td>{{ object.destination_address }}</td></tr>
+<tr><td>destination_point</td><td>{{ object.destination_point }}</td></tr>
+<tr><td>pickup_time</td><td>{{ object.pickup_time }}</td></tr>
+<tr><td>dropoff_time</td><td>{{ object.dropoff_time }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Travel</a>
+
+{% endblock %}

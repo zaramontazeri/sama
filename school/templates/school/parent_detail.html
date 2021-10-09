@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'school_parent_list' %}">Parent Listing</a></p>
+<table class="table">
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>full_name</td><td>{{ object.full_name }}</td></tr>
+<tr><td>emergency_numbers</td><td>{{ object.emergency_numbers }}</td></tr>
+<tr><td>national_code</td><td>{{ object.national_code }}</td></tr>
+<tr><td>gender</td><td>{{ object.gender }}</td></tr>
+<tr><td>address_point</td><td>{{ object.address_point }}</td></tr>
+<tr><td>address</td><td>{{ object.address }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Parent</a>
+
+{% endblock %}

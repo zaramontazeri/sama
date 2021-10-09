@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'transportation_company_contract_list' %}">Contract Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>created</td>
+    <td>last_updated</td>
+    <td>status</td>
+    <td>service_type</td>
+    <td>commission_rate_contract</td>
+    <td>source_loc</td>
+    <td>destination_loc</td>
+    <td>source_address</td>
+    <td>destination_address</td>
+    <td>side_way</td>
+    <td>special</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.created }}</td>
+    <td>{{ object.last_updated }}</td>
+    <td>{{ object.status }}</td>
+    <td>{{ object.service_type }}</td>
+    <td>{{ object.commission_rate_contract }}</td>
+    <td>{{ object.source_loc }}</td>
+    <td>{{ object.destination_loc }}</td>
+    <td>{{ object.source_address }}</td>
+    <td>{{ object.destination_address }}</td>
+    <td>{{ object.side_way }}</td>
+    <td>{{ object.special }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'transportation_company_contract_create' %}">Create new Contract</a>
+{% endblock %}

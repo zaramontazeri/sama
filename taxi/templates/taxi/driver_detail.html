@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'taxi_driver_list' %}">Driver Listing</a></p>
+<table class="table">
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>national_code</td><td>{{ object.national_code }}</td></tr>
+<tr><td>car_id</td><td>{{ object.car_id }}</td></tr>
+<tr><td>driver_code</td><td>{{ object.driver_code }}</td></tr>
+<tr><td>file_code</td><td>{{ object.file_code }}</td></tr>
+<tr><td>full_name</td><td>{{ object.full_name }}</td></tr>
+<tr><td>phones</td><td>{{ object.phones }}</td></tr>
+<tr><td>avatar</td><td>{{ object.avatar }}</td></tr>
+<tr><td>active</td><td>{{ object.active }}</td></tr>
+<tr><td>online</td><td>{{ object.online }}</td></tr>
+<tr><td>licence_grade_code</td><td>{{ object.licence_grade_code }}</td></tr>
+<tr><td>email</td><td>{{ object.email }}</td></tr>
+<tr><td>rate</td><td>{{ object.rate }}</td></tr>
+<tr><td>birthdate</td><td>{{ object.birthdate }}</td></tr>
+<tr><td>gender</td><td>{{ object.gender }}</td></tr>
+<tr><td>is_single</td><td>{{ object.is_single }}</td></tr>
+<tr><td>certificate_date</td><td>{{ object.certificate_date }}</td></tr>
+<tr><td>taxi_licnese_date</td><td>{{ object.taxi_licnese_date }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Driver</a>
+
+{% endblock %}

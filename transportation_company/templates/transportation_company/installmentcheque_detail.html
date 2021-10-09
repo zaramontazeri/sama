@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'transportation_company_installmentcheque_list' %}">InstallmentCheque Listing</a></p>
+<table class="table">
+<tr><td>cheque_number</td><td>{{ object.cheque_number }}</td></tr>
+<tr><td>slug</td><td>{{ object.slug }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>bank_name</td><td>{{ object.bank_name }}</td></tr>
+<tr><td>track_card_payment_number</td><td>{{ object.track_card_payment_number }}</td></tr>
+<tr><td>description</td><td>{{ object.description }}</td></tr>
+<tr><td>state</td><td>{{ object.state }}</td></tr>
+<tr><td>due_date</td><td>{{ object.due_date }}</td></tr>
+<tr><td>amount</td><td>{{ object.amount }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit InstallmentCheque</a>
+
+{% endblock %}

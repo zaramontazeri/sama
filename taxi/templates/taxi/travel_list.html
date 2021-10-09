@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'taxi_travel_list' %}">Travel Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>name</td>
+    <td>slug</td>
+    <td>created</td>
+    <td>last_updated</td>
+    <td>source_address</td>
+    <td>source_point</td>
+    <td>destination_address</td>
+    <td>destination_point</td>
+    <td>pickup_time</td>
+    <td>dropoff_time</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.name }}</td>
+    <td>{{ object.slug }}</td>
+    <td>{{ object.created }}</td>
+    <td>{{ object.last_updated }}</td>
+    <td>{{ object.source_address }}</td>
+    <td>{{ object.source_point }}</td>
+    <td>{{ object.destination_address }}</td>
+    <td>{{ object.destination_point }}</td>
+    <td>{{ object.pickup_time }}</td>
+    <td>{{ object.dropoff_time }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'taxi_travel_create' %}">Create new Travel</a>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'transportation_company_address_list' %}">Address Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>name</td>
+    <td>created</td>
+    <td>last_updated</td>
+    <td>point</td>
+    <td>address</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.name }}</td>
+    <td>{{ object.created }}</td>
+    <td>{{ object.last_updated }}</td>
+    <td>{{ object.point }}</td>
+    <td>{{ object.address }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'transportation_company_address_create' %}">Create new Address</a>
+{% endblock %}

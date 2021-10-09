@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'school_student_list' %}">Student Listing</a></p>
+<table class="table">
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>full_name</td><td>{{ object.full_name }}</td></tr>
+<tr><td>national_code</td><td>{{ object.national_code }}</td></tr>
+<tr><td>gender</td><td>{{ object.gender }}</td></tr>
+<tr><td>student_code</td><td>{{ object.student_code }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Student</a>
+
+{% endblock %}

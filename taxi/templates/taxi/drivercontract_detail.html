@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'taxi_drivercontract_list' %}">DriverContract Listing</a></p>
+<table class="table">
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>start_date</td><td>{{ object.start_date }}</td></tr>
+<tr><td>end_date</td><td>{{ object.end_date }}</td></tr>
+<tr><td>salari</td><td>{{ object.salari }}</td></tr>
+<tr><td>salari_type</td><td>{{ object.salari_type }}</td></tr>
+<tr><td>price_increase</td><td>{{ object.price_increase }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit DriverContract</a>
+
+{% endblock %}

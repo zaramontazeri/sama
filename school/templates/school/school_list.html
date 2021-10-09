@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'school_school_list' %}">School Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>name</td>
+    <td>created</td>
+    <td>last_updated</td>
+    <td>manager_full_name</td>
+    <td>phone_numbers</td>
+    <td>time_shifts</td>
+    <td>manager_mobile</td>
+    <td>manager_national_number</td>
+    <td>working_time</td>
+    <td>address</td>
+    <td>address_point</td>
+    <td>deputy_mobile</td>
+    <td>deputy_full_name</td>
+    <td>service_officer</td>
+    <td>avatar</td>
+    <td>postal_code</td>
+    <td>student_count</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.name }}</td>
+    <td>{{ object.created }}</td>
+    <td>{{ object.last_updated }}</td>
+    <td>{{ object.manager_full_name }}</td>
+    <td>{{ object.phone_numbers }}</td>
+    <td>{{ object.time_shifts }}</td>
+    <td>{{ object.manager_mobile }}</td>
+    <td>{{ object.manager_national_number }}</td>
+    <td>{{ object.working_time }}</td>
+    <td>{{ object.address }}</td>
+    <td>{{ object.address_point }}</td>
+    <td>{{ object.deputy_mobile }}</td>
+    <td>{{ object.deputy_full_name }}</td>
+    <td>{{ object.service_officer }}</td>
+    <td>{{ object.avatar }}</td>
+    <td>{{ object.postal_code }}</td>
+    <td>{{ object.student_count }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'school_school_create' %}">Create new School</a>
+{% endblock %}

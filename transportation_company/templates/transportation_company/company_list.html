@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'transportation_company_company_list' %}">Company Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>created</td>
+    <td>last_updated</td>
+    <td>manager_full_name</td>
+    <td>manager_national_code</td>
+    <td>name</td>
+    <td>avatar</td>
+    <td>email</td>
+    <td>website</td>
+    <td>active</td>
+    <td>phone_numbers</td>
+    <td>capacity</td>
+    <td>service_types</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.created }}</td>
+    <td>{{ object.last_updated }}</td>
+    <td>{{ object.manager_full_name }}</td>
+    <td>{{ object.manager_national_code }}</td>
+    <td>{{ object.name }}</td>
+    <td>{{ object.avatar }}</td>
+    <td>{{ object.email }}</td>
+    <td>{{ object.website }}</td>
+    <td>{{ object.active }}</td>
+    <td>{{ object.phone_numbers }}</td>
+    <td>{{ object.capacity }}</td>
+    <td>{{ object.service_types }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'transportation_company_company_create' %}">Create new Company</a>
+{% endblock %}

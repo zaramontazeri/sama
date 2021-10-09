@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'transportation_company_company_list' %}">Company Listing</a></p>
+<table class="table">
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>manager_full_name</td><td>{{ object.manager_full_name }}</td></tr>
+<tr><td>manager_national_code</td><td>{{ object.manager_national_code }}</td></tr>
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>avatar</td><td>{{ object.avatar }}</td></tr>
+<tr><td>email</td><td>{{ object.email }}</td></tr>
+<tr><td>website</td><td>{{ object.website }}</td></tr>
+<tr><td>active</td><td>{{ object.active }}</td></tr>
+<tr><td>phone_numbers</td><td>{{ object.phone_numbers }}</td></tr>
+<tr><td>capacity</td><td>{{ object.capacity }}</td></tr>
+<tr><td>service_types</td><td>{{ object.service_types }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Company</a>
+
+{% endblock %}

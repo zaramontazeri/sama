@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'school_parent_list' %}">Parent Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>created</td>
+    <td>last_updated</td>
+    <td>full_name</td>
+    <td>emergency_numbers</td>
+    <td>national_code</td>
+    <td>gender</td>
+    <td>address_point</td>
+    <td>address</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.created }}</td>
+    <td>{{ object.last_updated }}</td>
+    <td>{{ object.full_name }}</td>
+    <td>{{ object.emergency_numbers }}</td>
+    <td>{{ object.national_code }}</td>
+    <td>{{ object.gender }}</td>
+    <td>{{ object.address_point }}</td>
+    <td>{{ object.address }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'school_parent_create' %}">Create new Parent</a>
+{% endblock %}

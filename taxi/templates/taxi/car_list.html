@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'taxi_car_list' %}">Car Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>name</td>
+    <td>slug</td>
+    <td>created</td>
+    <td>last_updated</td>
+    <td>car_color</td>
+    <td>produce_year</td>
+    <td>technical_date</td>
+    <td>insurance_date</td>
+    <td>car_code</td>
+    <td>service_type</td>
+    <td>vin_number</td>
+    <td>chasis_number</td>
+    <td>motor_number</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.name }}</td>
+    <td>{{ object.slug }}</td>
+    <td>{{ object.created }}</td>
+    <td>{{ object.last_updated }}</td>
+    <td>{{ object.car_color }}</td>
+    <td>{{ object.produce_year }}</td>
+    <td>{{ object.technical_date }}</td>
+    <td>{{ object.insurance_date }}</td>
+    <td>{{ object.car_code }}</td>
+    <td>{{ object.service_type }}</td>
+    <td>{{ object.vin_number }}</td>
+    <td>{{ object.chasis_number }}</td>
+    <td>{{ object.motor_number }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'taxi_car_create' %}">Create new Car</a>
+{% endblock %}
